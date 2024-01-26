@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regression Results</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background: linear-gradient(to bottom right, #0066ff, #cc00ff);
+			background-size: 400% 400%;
+			animation: gradient 3s ease infinite;
+		}
+		h1 {
+			text-align: center;
+			color: white;
+			font-size: 40px;
+			margin-top: 50px;
+		}
+		p {
+			color: white;
+			font-size: 22px;
+			margin-left: 20px;
+			margin-top: 30px;
+		}
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>Regression Results</h1>
+	<p>Score: {{ score }}</p>
+	<p>MSE: {{ mse }}</p>
+	<p>Prediction: {{ prediction }}</p>
+</body>
+</html>

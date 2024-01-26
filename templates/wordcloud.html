@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Cloud</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff69b4, #1e90ff, #ff69b4);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            animation: backgroundGradient 10s ease infinite;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            animation: slideIn 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .image-container img {
+            max-width: 40%;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes backgroundGradient {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word Cloud</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/wordcloud_caption.png') }}" alt="Caption Word Cloud">
+            <img src="{{ url_for('static', filename='images/wordcloud_hashtags.png') }}" alt="Hashtags Word Cloud">
+        </div>
+    </div>
+</body>
+</html>
